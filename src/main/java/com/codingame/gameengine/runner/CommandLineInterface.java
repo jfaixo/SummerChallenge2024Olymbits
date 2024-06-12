@@ -74,10 +74,6 @@ public class CommandLineInterface {
             if (cmd.hasOption("s")) {
                 runner.start();
             } else {
-                Method initialize = GameRunner.class.getDeclaredMethod("initialize", Properties.class);
-                initialize.setAccessible(true);
-                initialize.invoke(runner, new Properties());
-
                 Method run = GameRunner.class.getDeclaredMethod("runGame");
                 run.setAccessible(true);
                 run.invoke(runner);
